@@ -1,15 +1,15 @@
 // Node module styles
-@import '../../../../spotify-match/node_modules/animate.css/animate.css';
-@import '../../../../spotify-match/node_modules/react-toggle/style.css';
-@import '../../../../spotify-match/node_modules/rodal/lib/rodal.css';
-@import '../../../../spotify-match/node_modules/noty/lib/noty.css';
+@import "~animate.css/animate.css";
+@import "~react-toggle/style.css";
+@import "~rodal/lib/rodal.css";
+@import "~noty/lib/noty.css";
 
 // Custom scss files
-@import 'vars';
-@import '../styles/typography';
-@import '../styles/animations';
-@import '../styles/overrides';
-@import '../styles/utils/index';
+@import "vars";
+@import "src/styles/typography";
+@import "src/styles/animations";
+@import "src/styles/overrides";
+@import "src/styles/utils/index";
 
 body {
   margin: 0;
@@ -34,7 +34,7 @@ html,
   box-sizing: border-box;
 }
 
-[data-whatintent='mouse'] *:focus,
-[data-whatintent='touch'] *:focus {
+[data-whatintent="mouse"] *:focus,
+[data-whatintent="touch"] *:focus {
   outline: none;
 }
