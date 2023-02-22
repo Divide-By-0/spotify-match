@@ -11,7 +11,10 @@ export default function Home({ onConnect }) {
 		<div className="home">
 			<Helmet><meta name="theme-color" content="#00BA89" /></Helmet>
 			<div className="home__intro">
-				<Logo className="home__intro__logo" />
+				<div className="home__header">
+					<Logo className="home__intro__logo" />
+					<h1 style={{ fontSize: 80, color: '#FFFFFF' }} className="mt-20 ml-20">Spotify Match</h1>
+				</div>
 				<Text inverse heading className="mt-20">Match your favorite music with friends that love it too!</Text>
 				<Text subHeading inverse className="mb-60">Find friends who listen to your favorite artists</Text>
 				<div className="home__intro__connect">

@@ -3,4 +3,19 @@
   flex: 1;
   flex-direction: column;
   background: white;
+
+}
+.bg-img {
+  opacity: 0.2;
+  height: auto;
+  z-index: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -256px; /* Width of image /2 */
+  margin-top: -256px; /* Height of image /2 */
+}
+
+.top {
+  z-index: 10;
 }

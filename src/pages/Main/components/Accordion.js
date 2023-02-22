@@ -1,7 +1,7 @@
 import { useVisibilityState } from 'webrix/hooks';
 import Collapse from '@kunukn/react-collapse';
 import cx from 'classnames';
-import { Icon, Text } from 'common/components';
+import { Icon } from 'common/components';
 import '../styles/_accordion.scss';
 
 export default function Accordion({ title, children, className }) {

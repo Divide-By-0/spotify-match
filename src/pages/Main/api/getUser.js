@@ -1,5 +1,4 @@
 import axios from 'axios';
-import withApiErrorHandling from 'common/utils/withApiErrorHandling';
 
 export default async function getUser(token, userId) {
     const url = `https://api.spotify.com/v1/users/${userId}`

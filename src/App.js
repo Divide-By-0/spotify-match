@@ -8,7 +8,6 @@ import getUserProfile from "common/api/getUserProfile";
 import { Avatar, Button, Error, Modal, Text } from "common/components";
 import notify from "common/utils/notify";
 import store from "./common/utils/store";
-import CONFIG from "./config";
 import "./styles/_app.scss";
 
 const Home = lazy(() => import("pages/Home"));
@@ -20,7 +19,7 @@ async function getToken({ profile: profileProp, setToken, setProfile, authProps 
     headers: { "content-type": "application/x-www-form-urlencoded" },
     data: queryString.stringify({
       ...authProps,
-      client_id: CONFIG.SPOTIFY_CLIENT_ID,
+      client_id: process.env.REACT_APP_SPOTIFY_CLIENT_ID,
     }),
     url: "https://accounts.spotify.com/api/token",
   };
@@ -108,7 +107,7 @@ function App() {
           authProps: {
             grant_type: "authorization_code",
             code: spotifyAuthCode,
-            redirect_uri: CONFIG.REDIRECT_URL,
+            redirect_uri: process.env.REACT_APP_REDIRECT_URL ?? "https://spotify-match.com",
             code_verifier: spotifyState,
           },
         });
@@ -147,8 +146,8 @@ function App() {
 
     window.location.href =
       "https://accounts.spotify.com/authorize?response_type=code" +
-      `&client_id=${CONFIG.SPOTIFY_CLIENT_ID}` +
-      `&redirect_uri=${CONFIG.REDIRECT_URL}` +
+      `&client_id=${process.env.REACT_APP_SPOTIFY_CLIENT_ID}` +
+      `&redirect_uri=${process.env.REACT_APP_REDIRECT_URL ?? "https://spotify-match.com"}` +
       "&scope=user-library-read playlist-modify-private playlist-read-private playlist-modify-public playlist-read-collaborative" +
       `&state=${codeVerifier}` +
       `&code_challenge=${codeChallenge}` +

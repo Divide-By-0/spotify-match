@@ -7,6 +7,7 @@ import Success from './Success';
 import '../styles/_main.scss';
 import { Helmet } from 'react-helmet';
 import getUser from '../api/getUser'
+import { ReactComponent as Background } from '../../../assets/images/spotify-match-bg.svg';
 
 
 const STAGES = [
@@ -44,25 +45,26 @@ export default function Main({ token, profile, signOut }) {
 
 		return (
 			<div className="main">
-				<Helmet><meta name="theme-color" content="#ffffff" /></Helmet>
+				{/*<Helmet><meta name="theme-color" content="#ffffff" /></Helmet>*/}
 				<Header
 					stage={stage}
 					title={STAGES[stage - 1]}
 					profile={profile}
 					signOut={signOut}
 				/>
-				{
-					stage === 1
-						? (
-							<Search
-								token={token}
-								onSelectItem={setItem}
-								onSearch={onSearch}
-								selectedItem={currentItem}
-							/>
-						)
-						: <Success friends={matches} onReset={onReset} />
-				}
+				<Background className="bg-img mt-100" />
+					{
+						stage === 1
+							? (
+								<Search
+									token={token}
+									onSelectItem={setItem}
+									onSearch={onSearch}
+									selectedItem={currentItem}
+								/>
+							)
+							: <Success friends={matches} onReset={onReset} />
+					}
 				<Waves className="mt-auto" />
 			</div>
 		);

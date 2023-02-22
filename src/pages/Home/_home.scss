@@ -12,6 +12,12 @@
     padding-right: 40px;
   }
 
+  &__header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
   &__intro {
     height: 90vh;
     display: flex;
@@ -107,6 +113,7 @@
       margin-bottom: 20px;
 
       @media only screen and (max-width: $mobile-width) {
+        display: none;
         width: 100%;
         height: auto;
         max-width: 400px;
