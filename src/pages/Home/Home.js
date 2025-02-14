@@ -1,3 +1,4 @@
+// File: /src/pages/Home/Home.js
 import { Helmet } from 'react-helmet';
 import { Button, Text } from 'common/components';
 import { ReactComponent as Logo } from '../../assets/images/logo.svg';
@@ -19,6 +20,9 @@ export default function Home({ onConnect }) {
 				<Text subHeading inverse className="mb-60">Find friends who listen to your favorite artists</Text>
 				<div className="home__intro__connect">
 					<Button icon="fa-spotify" brandIcon onClick={onConnect}>Connect To Spotify</Button>
+                    <Button type="secondary" onClick={() => window.location.href = 'https://spotifymatch.org'}>
+                        Back to main site
+                    </Button>
 					<a onClick={() => {
 						document.querySelector('.home__getting-started').scrollIntoView({ behavior: 'smooth' });
 					}}>Learn More</a>
